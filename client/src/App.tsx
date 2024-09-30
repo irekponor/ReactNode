@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -11,6 +11,10 @@ function App() {
     const response = await axios.get("http://localhost:8080");
     console.log(response.data.fruits);
   };
+
+  useEffect(() => {
+    fetchAPI();
+  }, []);
 
   return (
     <>
