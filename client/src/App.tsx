@@ -6,9 +6,11 @@ import axios from "axios";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [array, setArray] = useState([]);
 
   const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:8080");
+    const response = await axios.get("http://localhost:8080/api");
+    setArray(response.data.fruits);
     console.log(response.data.fruits);
   };
 
@@ -34,6 +36,12 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+        {array.map((fruit, index) => (
+          <div key={index}>
+            <p>{fruit}</p>
+            <br />
+          </div>
+        ))}
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
