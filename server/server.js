@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 
 // route
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ fruits: ["apple", "orange", "mango"] });
 });
 
