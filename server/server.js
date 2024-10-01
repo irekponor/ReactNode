@@ -10,7 +10,7 @@ app.use(cors(corsOptions));
 
 // route
 app.get("/api", (req, res) => {
-  res.json({ fruits: ["apple", "berry", "mango"] });
+  res.json({ food: ["bread", "egg", "sardine"] });
 });
 
 // server

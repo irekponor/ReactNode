@@ -10,8 +10,8 @@ function App() {
 
   const fetchAPI = async () => {
     const response = await axios.get("http://localhost:8080/api");
-    setArray(response.data.fruits);
-    console.log(response.data.fruits);
+    setArray(response.data.food);
+    console.log(response.data.food);
   };
 
   useEffect(() => {
@@ -36,9 +36,9 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
-        {array.map((fruit, index) => (
+        {array.map((food, index) => (
           <div key={index}>
-            <p>{fruit}</p>
+            <p>{food}</p>
             <br />
           </div>
         ))}
